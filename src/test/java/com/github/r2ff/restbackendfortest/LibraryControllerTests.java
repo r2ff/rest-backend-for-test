@@ -104,14 +104,14 @@ public class LibraryControllerTests {
                 .spec(Specs.request)
                 .contentType(ContentType.JSON)
                 .body("{" +
-                        "    \"book_author\": \"King\"" +
+                        "    \"book_author\": \"Alex\"" +
                         "}")
                 .when()
                 .post("books/byauthor")
                 .then()
                 .log().body()
                 .statusCode(200)
-                .body("book_author", hasItem("King"));
+                .body("book_author", hasItem("Alex"));
     }
 
     @Test
